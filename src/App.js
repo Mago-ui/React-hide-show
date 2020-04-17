@@ -19,9 +19,9 @@ class Component extends React.Component {
   render() {
     if (this.state.show) {
       return (
-        <div>
+        <div id="lol">
           {this.props.text}
-          {this.props.subtitle}
+          {this.props.sub}
 
           <div onClick={() => this.setState({ show: false })}>click</div>
         </div>
@@ -35,10 +35,13 @@ class Component extends React.Component {
 function App() {
   return (
     <div className="App">
-      <div>Hello World</div>
-      <Component title="payaso" sub="lol"></Component>
-      <Component title="payas" sub="lol"></Component>
-      <Component title="payas" sub="lol"></Component>
+      <div>Estos son Componentes</div>
+      <Component
+        text="El señor de los anillos"
+        sub="Las dos Torres"
+      ></Component>
+      <Component text="El Hobbit" sub="Tolkien"></Component>
+      <Component text="Juego de Tronos" sub="Temporada 7"></Component>
     </div>
   );
 }
