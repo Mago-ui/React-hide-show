@@ -16,6 +16,10 @@ class Component extends React.Component {
     show: true,
   };
 
+  taggle = () => {
+    this.setState({ show: !this.state.show });
+  };
+
   render() {
     if (this.state.show) {
       return (
@@ -23,11 +27,19 @@ class Component extends React.Component {
           {this.props.text}
           {this.props.sub}
 
-          <div onClick={() => this.setState({ show: false })}>click</div>
+          <div onClick={this.taggle}>click</div>
+          {
+            //<div onClick={() => this.setState({ show: false })}>click</div>
+          }
         </div>
       );
     } else {
-      return <h1>no hay nada :v</h1>;
+      return (
+        <div>
+          <h1>no hay mas cursos</h1>
+          <div onClick={this.taggle}>again</div>
+        </div>
+      );
     }
   }
 }
